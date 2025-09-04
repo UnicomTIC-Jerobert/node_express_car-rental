@@ -1,0 +1,10 @@
+<h2>Available Cars</h2>
+{{#if cars.length}}
+    <ul>
+    {{#each cars}}
+        <li>{{this.make}} {{this.model}} ({{this.year}})</li>
+    {{/each}}
+    </ul>
+{{else}}
+    <p>No cars available. Add one!</p>
+{{/if}}
