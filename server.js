@@ -9,6 +9,12 @@ const port = 3000;
 // Middleware to parse URL-encoded bodies (from forms)
 app.use(express.urlencoded({ extended: true }));
 
+// ADD THIS LINE to parse JSON request bodies from AJAX calls
+app.use(express.json());
+
+// Serve static files (CSS, JS)
+app.use(express.static(path.join(__dirname, 'public')));
+
 // Configure Express-Handlebars
 app.engine('handlebars', exphbs.engine({
     defaultLayout: 'main',
